@@ -1,0 +1,42 @@
+const API_URL = 'https://localhost:7148';
+const API_URL_PROD = 'https://localhost:7148';
+
+const API_ENDPOINTS = {
+    GET_ALL_TASKS: 'api/get-all-todos',
+    GET_TASK_BY_ID: 'api/get-todo-by-id',
+    CREATE_TASK: 'api/create-todo',
+    UPDATE_TASK: 'api/update-todo',
+    DELETE_TASK_BY_ID: 'api/delete-todo-by-id',
+    REGISTER_USER: 'api/register',
+    LOGIN_USER: 'api/login',
+    GET_USER: 'api/user',
+    LOGOUT_USER: 'api/logout'
+};
+
+const development = {
+    API_URL_GET_ALL_TASKS: `${API_URL}/${API_ENDPOINTS.GET_ALL_TASKS}`,
+    API_URL_GET_TASK_BY_ID: `${API_URL}/${API_ENDPOINTS.GET_TASK_BY_ID}`,
+    API_URL_CREATE_TASK: `${API_URL}/${API_ENDPOINTS.CREATE_TASK}`,
+    API_URL_UPDATE_TASK: `${API_URL}/${API_ENDPOINTS.UPDATE_TASK}`,
+    API_URL_DELETE_TASK_BY_ID: `${API_URL}/${API_ENDPOINTS.DELETE_TASK_BY_ID}`,
+    API_URL_REGISTER_USER: `${API_URL}/${API_ENDPOINTS.REGISTER_USER}`,
+    API_URL_LOGIN_USER: `${API_URL}/${API_ENDPOINTS.LOGIN_USER}`,
+    API_URL_GET_USER: `${API_URL}/${API_ENDPOINTS.GET_USER}`,
+    API_URL_LOGOUT_USER: `${API_URL}/${API_ENDPOINTS.LOGOUT_USER}`
+};
+
+const production = {
+    API_URL_GET_ALL_TASKS: `${API_URL_PROD}/${API_ENDPOINTS.GET_ALL_TASKS}`,
+    API_URL_GET_TASK_BY_ID: `${API_URL_PROD}/${API_ENDPOINTS.GET_TASK_BY_ID}`,
+    API_URL_CREATE_TASK: `${API_URL_PROD}/${API_ENDPOINTS.CREATE_TASK}`,
+    API_URL_UPDATE_TASK: `${API_URL_PROD}/${API_ENDPOINTS.UPDATE_TASK}`,
+    API_URL_DELETE_TASK_BY_ID: `${API_URL_PROD}/${API_ENDPOINTS.DELETE_TASK_BY_ID}`,
+    API_URL_REGISTER_USER: `${API_URL}/${API_ENDPOINTS.REGISTER_USER}`,
+    API_URL_LOGIN_USER: `${API_URL}/${API_ENDPOINTS.LOGIN_USER}`,
+    API_URL_GET_USER: `${API_URL}/${API_ENDPOINTS.GET_USER}`,
+    API_URL_LOGOUT_USER: `${API_URL}/${API_ENDPOINTS.LOGOUT_USER}`
+};
+
+const Constants = process.env.NODE_ENV === 'development' ? development : production;
+
+export default Constants; 
